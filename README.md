@@ -2,7 +2,7 @@
 Banuprakash C
 
 Full Stack Architect,
-Co-founder Lucida Technologies Pvt Ltd.,
+Co-founder & CEO Lucida Technologies Pvt Ltd.,
 Corporate Trainer & Consultant,
 
 Emails: banu@lucidatechnologies.com; banuprakashc@yahoo.co.in; banuprakash.cr@gmail.com
