@@ -19,22 +19,41 @@ class Product {
     }
 }
 
+class SizeSpecification {
+    constructor(size) {
+        this.size = size;
+    }
+    isSatisfied(item) {
+        return item.size === this.size;
+    }
+}
+
+
+class ColorSpecification {
+    constructor(color) {
+        this.color = color;
+    }
+
+    isSatisfied(item) {
+        return item.color === this.color;
+    }
+}
+
+
+class AndSpecification {
+    constructor(...specs) {
+        this.specs = specs;
+    }
+    isSatisfied(item) {
+        return  this.specs.every(spec => spec.isSatisfied(item));
+    }
+}
+
+// OCP; Program to Contract
 class ProductFilter {
-    filterByColor(products, color) {
-        return products.filter(p => p.color === color);
+    filter(items, spec) {
+      return items.filter(item => spec.isSatisfied(item));
     }
-
-    filterBySize(products, size) {
-        return products.filter(p => p.size === size);
-    }
-
-    filterBySizeAndColor(products, size, color) {
-        return products.filter(p =>
-            p.size === size && p.color === color);
-    }
-
-    // state space explosion
-    // 3 criteria (+weight) = 7 methods
 }
 
 let apple = new Product('Apple', Color.green, Size.small);
@@ -44,6 +63,20 @@ let house = new Product('House', Color.blue, Size.large);
 let products = [apple, tree, house];
 
 let pf = new ProductFilter();
-console.log(`Green products (old):`);
-for (let p of pf.filterByColor(products, Color.green))
+console.log(`Green products:`);
+for (let p of pf.filter(products, new ColorSpecification(Color.green)))
   console.log(` * ${p.name} is green`);
+
+console.log(`Small products:`);
+for (let p of pf.filter(products, new SizeSpecification(Size.small)))
+  console.log(` * ${p.name} is small`);
+
+let andSpec = new AndSpecification(
+    new ColorSpecification(Color.green),
+    new SizeSpecification(Size.large)
+);
+
+console.log("****")
+for (let p of pf.filter(products, andSpec))
+    console.log(` * ${p.name} is large and green`);
+  

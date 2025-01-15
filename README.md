@@ -16,5 +16,20 @@ Visual Studio Code.
 Chrome Web Browser
 NodeJS Latest LTS
 
-====================
+==========================
 
+```
+
+class Product {
+    id, name, price
+}
+
+class Tv extends Product {
+    screenType, screenSize
+}
+
+class Mobile extends Product {
+    connectivity, camera
+}
+
+```

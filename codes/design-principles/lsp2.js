@@ -14,7 +14,11 @@ const eagle = new Eagle();
 eagle.fly();
 eagle.dive();
 
-class Penguin extends Bird() {
+// LSP fails
+class Penguin extends Bird {
     //Problem: Can't fly! 
 }
 
+// Solution: declare interface Flyable { fly();}
+// class Bird {}
+// class Eagle extends Bird implements Flyable { }
