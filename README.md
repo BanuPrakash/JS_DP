@@ -81,5 +81,10 @@ diexample> tsc --init
 
 ==============================
 
+Builder Pattern in react.
+Building Form components
+input+, checkbox+, dropdown+, 
 
-
+yarn create react-app -- react-formbuilder --template typescript
+react-formbuilder> npm i @testing-library/react@latest
+react-formbuilder> npm i @mui/material @emotion/react @emotion/styled
