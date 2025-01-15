@@ -1,4 +1,5 @@
 class Bird {
+   // name, age, color Apply DRY principle
     fly() {
         //..
     }
@@ -22,3 +23,10 @@ class Penguin extends Bird {
 // Solution: declare interface Flyable { fly();}
 // class Bird {}
 // class Eagle extends Bird implements Flyable { }
+
+function doTask(bird){
+    bird.fly();
+}
+
+doTask(new Eagle()); 
+doTask(new Penguin()); // fails

@@ -33,3 +33,49 @@ class Mobile extends Product {
 }
 
 ```
+
+ISP:
+
+```
+    interface AdminService {
+        createAccount();
+        deleteAccount();
+        blockAccount();
+    }
+
+    interface CustomerInterface {
+        debit(amt);
+        credit(amt);
+    }
+
+    class BankingService implements AdminSevice, CustomerInterface {
+        createAccount();
+        deleteAccount();
+        blockAccount();
+        debit(amt);
+        credit(amt);
+    }
+
+    If Admin logins in:
+    adminService = new BankingService();
+
+```
+
+In JS/TS Dependecny Injection can be acheived using IoC Containers [like Spring Container]:
+* InversifyJS
+* Typed Inject
+* TypeDI
+* TSyringe
+
+TSyringe example for DI
+diexample> npm init --y
+diexample> npm i typescript tsyringe reflect-metadata @types/node
+
+Node JS libraries are in JavaScript
+@types/node --> types defenition for Node JS libraries
+
+Example:
+@types/react contain types definition for React JS library
+
+diexample> tsc --init
+
