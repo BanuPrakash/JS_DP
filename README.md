@@ -88,3 +88,18 @@ input+, checkbox+, dropdown+,
 yarn create react-app -- react-formbuilder --template typescript
 react-formbuilder> npm i @testing-library/react@latest
 react-formbuilder> npm i @mui/material @emotion/react @emotion/styled
+
+One more example --> share it 
+
+=============================
+
+Compound Pattern  [ Not GangOf4]
+Compound components --> <select> <option>
+Pattern in which components are used together, share state and communicate with each other in the backbround
+
+Issues:
+1) Maybe not show Author
+2) Maybe order can change
+3) Not show buttons ,,
+
+ReactContext should be used in Compound Pattern  to share state between then

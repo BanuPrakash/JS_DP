@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { FormBuilder } from './forms/Builder';
+import PostCard from './compound/PostCard';
 
 function App() {
   const inputs = FormBuilder.init()
@@ -13,7 +14,22 @@ function App() {
 
   return (
     <div className='App'>
-      {inputs}
+      {/* {inputs} */}
+      <PostCard 
+      post={{
+        id: 12,
+        title : "My First Post",
+        content : "Details of First Post",
+        user: {
+          id: 62,
+          name: 'Roger'
+        }
+      }
+      }>
+         <PostCard.Content />
+         <PostCard.Title />
+         <PostCard.User />
+      </PostCard>
     </div>
   );
 }
