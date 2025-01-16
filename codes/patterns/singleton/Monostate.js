@@ -1,3 +1,4 @@
+// Singleton pattern using MonoState
 class CEO {
     get name() { return CEO._name; }
     set name(value) { CEO._name = value; }
@@ -11,6 +12,7 @@ class CEO {
     }
 }
 
+// static members
 CEO._age = undefined;
 CEO._name = undefined;
 

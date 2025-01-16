@@ -140,3 +140,7 @@ React.cloneElement() function enables developers to clone a React Element. allow
 
 const clone = React.cloneElement(element, props, ...children);
 
+Singleton: Redux Store is a singleton
+Store as singleton, later we will add Observer pattern, making it work like Redux Store
+
+
