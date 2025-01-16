@@ -27,6 +27,7 @@ class Person {
             `I live at ${this.address.toString()}`
         );
     }
+
 }
 
 // implement Serializer to clone

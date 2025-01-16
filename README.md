@@ -134,3 +134,9 @@ Abstract Factory Pattern
 
 Prototype: 
 Example: ChessBoard : Pawn -> 16, Word Templates
+
+React.createElement()
+React.cloneElement() function enables developers to clone a React Element. allowing modifications to its props and children. Used especially for enhancing or customization children components
+
+const clone = React.cloneElement(element, props, ...children);
+
