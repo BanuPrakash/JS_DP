@@ -129,3 +129,8 @@ Motivation
 client: getConnection();
 
 Abstract Factory Pattern
+
+================
+
+Prototype: 
+Example: ChessBoard : Pawn -> 16, Word Templates

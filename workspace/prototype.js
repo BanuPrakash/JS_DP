@@ -32,6 +32,7 @@ class Person {
 let john = new Person('John',
     new Address('123 London Road', 'London', 'UK'));
 
+// copy only fields/state and not behaviour and type [Person , Address]
 let jane = JSON.parse(JSON.stringify(john));
 
 jane.name = 'Jane';
@@ -42,4 +43,4 @@ console.log(jane.toString()); // inherited method
 
 john.greet();
 // this won't work, only dictionary [key/value] pairs are copied and not type info.
-// jane.greet();
+jane.greet();
