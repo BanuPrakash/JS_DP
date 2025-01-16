@@ -103,3 +103,29 @@ Issues:
 3) Not show buttons ,,
 
 ReactContext should be used in Compound Pattern  to share state between then
+
+===========
+
+Day 1 Recap:
+
+SOLID Design Principles
+IoC Container
+A -> B --> C --> D
+
+Design Pattern: Builder pattern
+
+Compound Pattern of React
+
+@Builder --> lombok
+
+Day 2:
+
+Factory Pattern: wholesale creation of Objects (not piecewise)
+Motivation
+* Object creation becomes too complicated/complex
+ Database Connection pool object [url, user, pwd, poolsize,..]
+* Object creation can be outsourced
+
+client: getConnection();
+
+Abstract Factory Pattern
