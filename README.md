@@ -143,4 +143,34 @@ const clone = React.cloneElement(element, props, ...children);
 Singleton: Redux Store is a singleton
 Store as singleton, later we will add Observer pattern, making it work like Redux Store
 
+===============
+
+HOF: 
+1) function takes a function as argument
+2) function returns a function
+
+React HOC as Decorator Pattern
+
+High Order Component: takes a component and returns the component.
+Returned component can have extra state and behiavour
+
+=======
+
+new Computer("Dell", "Studio XPS", "intel", "5G", "ASRC");
+new Computer("Dell", "Studio XPS", "intel", "6G", "OSXC");
+new Computer("Dell", "Studio XPS", "intel", "2G", "OPAX");
+
+
+
+FlyWeight object ==> "Dell", "Studio XPS", "intel" 
+
+=================
+
+ValueProxy: JS calls valueOf() method to covert an object to a primitive value. JS implicilty invokes, we don't need to call it like toString()
+
+ES 6 Proxy: Proxy object allows to create an object in place of original object.
+helps in log, validate, format, sanitize 
+
+=================
+
 

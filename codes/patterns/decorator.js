@@ -64,6 +64,7 @@ class Pepperoni extends ToppingsDecorator {
 let pizza = new Margherita();
 console.log(pizza.getDescription() + " Cost :" + pizza.getCost());
 
+
 // decorate it with ExtraCheese topping
 pizza = new ExtraCheese(pizza);
 
