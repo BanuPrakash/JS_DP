@@ -15,7 +15,7 @@ function App() {
   return (
     <div className='App'>
       {/* {inputs} */}
-      <PostCard 
+      {/* <PostCard 
       post={{
         id: 12,
         title : "My First Post",
@@ -29,7 +29,7 @@ function App() {
          <PostCard.Content />
          <PostCard.Title />
          <PostCard.User />
-      </PostCard>
+      </PostCard> */}
     </div>
   );
 }

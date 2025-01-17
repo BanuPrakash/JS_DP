@@ -173,4 +173,108 @@ helps in log, validate, format, sanitize
 
 =================
 
+https://medium.com/coding-beauty/javascript-intersection-observer-cded4e80a377
 
+
+Proxy
+Bridge
+Behavioral Patterns: Command, Iterator, Observer, Visitor
+
+===========
+
+Day 3:
+ES6 - ES2025 Proxy Api.
+set() get() and apply() traps
+
+```
+function update(..) {
+
+}
+
+let product = {
+
+}
+
+let customer = {
+    
+}
+update.apply(product, [4, "Tim"]);
+update.call(product, 4, "Tim");
+```
+
+Bridge Pattern: Structural pattern - lets you split class or set of closely related classes into seperate hierarchies [ abstraction and implementor]
+
+Abstraction and Implementation; seperation of concerns
+
+1) Abstraction is a high level control delegates work to Implementation layer
+
+2) Implementation, platform-specifc code
+
+Views: LongView, ShortView, ConceptualView
+Resources: Artist, Album, PlayList
+
+Inheritance Approach:
+* LongViewArtist
+* LongViewAlbum
+* LongViewPlayList
+* ShortViewArtist
+* ShortViewAlbum
+* ShortViewPlayList
+* ConceptualViewArtist
+* ConceptualViewAlbum
+* ConceptualViewPlayList
+
+```
+    // Abstraction
+    class View {
+        constructor(resource) {
+            this.resource = resource;
+        }
+        show() {
+            
+        }
+    }
+
+    class LongView extends view {
+        constructor(resource) {
+            super(resource);
+        }
+
+        show() {
+            this.resource.snippet();
+        }
+    }
+
+     class ShortView extends view {
+        constructor(resource) {
+            super(resource);
+        }
+
+        show() {
+            this.resource.snippet();
+        }
+    }
+    // implementor
+    class Resource {
+        snippet() {
+            ..
+        }
+    }
+
+    class Artist extends Resource {
+        snippet() {
+            ..
+        }
+    }
+
+     class Album extends Resource {
+        snippet() {
+            ..
+        }
+    }
+    class PlayList extends Resource {
+        snippet() {
+            ..
+        }
+    }
+```
