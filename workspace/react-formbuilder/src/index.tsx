@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 
-import User from './intersection/User';
-import UserIntersection from './intersection/UserIntersection';
+
+import CommandApp from './command/CommandApp';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <UserIntersection />
+    <CommandApp />
   </React.StrictMode>
 );
 
