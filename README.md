@@ -278,3 +278,42 @@ Inheritance Approach:
         }
     }
 ```
+
+Iterator: traverse elements in collection
+
+The Symbol.iterator static data property represents the well-known symbol Symbol.iterator returns an Iterator
+
+next(); done [boolean], value
+
+===========================
+
+Vistor Pattern: defines a new operation to a collection of objects without changing the objects themselfs.
+
+Single Dispatch: decides the method to call based on the object type
+ref.buy();
+Double Dispatch: decides a method to call baesd on both the object type and the argument type
+ref.buy(arg);
+
+
+Babel uses Vistor Pattern
+plugins are visitor
+@babel/preset-env --> Syntax transform; arrow fn to normal fn, let to var ,...
+@babel/preset-react --> JSX to JS object
+
+Parse --> Traverse & Transform ==> generate Tokens [ AST]
+
+npm init --y
+npm i babel-cli babel-loader
+
+.babelrc
+
+```
+import utils from "/Users/banuprakash/Documents/codes/JS/adobe/JS_DP/workspace/babel_visitor/lib//utils";
+
+var greeting = "Hi";
+console.log(utils);
+console.log(greeting);
+
+```
+
+https://astexplorer.net/
