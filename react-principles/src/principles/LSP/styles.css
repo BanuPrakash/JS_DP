@@ -1,0 +1,54 @@
+/* LSP button variants */
+
+.btn-primary,
+.btn-danger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, box-shadow 0.12s ease;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #2563eb; /* blue-600 */
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8; /* blue-700 */
+}
+
+.btn-danger {
+  background-color: #dc2626; /* red-600 */
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background-color: #b91c1c; /* red-700 */
+}
+
+/* Disabled state */
+.btn-primary:disabled,
+.btn-danger:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Focus state */
+.btn-primary:focus,
+.btn-danger:focus {
+  outline: 3px solid rgba(59,130,246,0.18);
+  outline-offset: 2px;
+}
+
+/* Fallback styling if a variant isn't matched */
+.btn-undefined,
+.btn-default {
+  background-color: #e5e7eb; /* gray-200 */
+  color: #111827; /* gray-900 */
+  border: 1px solid #d1d5db;
+}
