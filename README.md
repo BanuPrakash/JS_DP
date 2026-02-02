@@ -147,4 +147,65 @@ I -> Interface Seggregation
     customerService.createAccount(account); // fails
 ```
 
+react-principles: npm install
+react-principles: npm run dev
+
 Dependency Injection:
+Flow is Inversed.
+Controller -> Service -> Repository -> database
+
+Inversion Of Flow:
+Controller <- Service <- Repository <- database
+
+
+props -> Dependency Injection --> Top to Bottom
+
+Java: Spring Container / Play / Jersy / EJ container --> DI Providers
+JavaScript / TypeScript: InversifyJS/ TypedInject / TypeDI / TSyringe
+
+TSyringe: Lightweigt dependency injection container
+Allows to declare dependency inecjection using decorators
+Swap implementation easily
+Keep business logix independent of React
+
+Perfect for services, APIs,.. repositories
+
+1) npm create vite@latest
+```
+npm create vite@latest
+
+> npx
+> create-vite
+
+│
+◇  Project name:
+│  react-di
+│
+◇  Select a framework:
+│  React
+│
+◇  Select a variant:
+│  TypeScript
+
+```
+
+react-di % npm i tsyringe reflect-metadata
+
+in main.tsx
+import 'reflect-metadata'
+
+tsconfig.app.json
+ "experimentalDecorators": true,
+ "emitDecoratorMetadata": true
+
+new XmlBeanApplicationContext("file.xml")
+new AnnotationConfigApplicationContext(...);
+
+When should I use DI libraires in React?
+* Great for large apps
+* clean Architecture
+* Business logic is outside of UI
+* Easy Testing
+* Avoid Props-drill
+* Many a times better than React Context [ Provider, Consumer] and also leads to lots of re-rendering
+* Business logic can be used along with legacy JavaScript, other libraries / framework
