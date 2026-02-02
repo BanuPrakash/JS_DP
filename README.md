@@ -222,3 +222,27 @@ Builder Pattern: Object creation is complicated, piecewise object construction p
 The Lombok @Builder annotation automatically generates the boilerplate code required to implement the builder design pattern for a Java class, constructor, or method.
 
 Person.lives(..).works(...).build();
+
+Pros:
+* step-by-step construct
+* defer construction steps
+
+==================
+
+```
+    function App() {
+        const elements = new Builder()
+            .input({label:'Name'})
+            .input({label:'Email'})
+            .input({label:'Password', type="password"})
+            .checkbox({label:'Subscribe to NewsLetter'})
+            .build();
+        
+        return (
+            <div>
+                {elements}
+            </div>  
+        )
+    }
+
+```
