@@ -209,3 +209,16 @@ When should I use DI libraires in React?
 * Avoid Props-drill
 * Many a times better than React Context [ Provider, Consumer] and also leads to lots of re-rendering
 * Business logic can be used along with legacy JavaScript, other libraries / framework
+
+======================
+
+Creational Pattern:
+* Deals with creation of objects
+* Wholesale vs piecewise (step-by-step)
+
+Builder Pattern: Object creation is complicated, piecewise object construction provided by an API.
+
+// Lombok
+The Lombok @Builder annotation automatically generates the boilerplate code required to implement the builder design pattern for a Java class, constructor, or method.
+
+Person.lives(..).works(...).build();
