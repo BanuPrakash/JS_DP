@@ -8,7 +8,7 @@ let Size = Object.freeze({
     small: 'small',
     medium: 'medium',
     large: 'large',
-    yuge: 'yuge'
+    huge: 'huge'
 });
 
 class Product {

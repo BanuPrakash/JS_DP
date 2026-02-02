@@ -4,6 +4,7 @@ import { Filter, filterProducts } from "./Filter";
 import ProductItem from "./ProductItem";
 import "./styles.css"
 
+// Container Component: 
 const ProductList = () => {
   const { products } = useProducts();
   const { filterRate, handleRating } = useRateFilter();

@@ -1,3 +1,4 @@
+// BAD. Multiple reasons to change
 function register(user) {
     // 1. Validate
     if(!user.email) {

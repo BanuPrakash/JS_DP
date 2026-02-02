@@ -18,3 +18,5 @@ const ProductItem = (props: IProductProps) => {
 };
 
 export default ProductItem;
+
+// export default React.memo(ProductItem);

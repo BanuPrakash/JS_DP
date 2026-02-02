@@ -1,4 +1,4 @@
-import React from "react";
+
 import VideoList from "./VideoList";
 import Data from "../data.json";
 import "../../SRP/Style.css";

@@ -1,3 +1,5 @@
+// BAD. Multiple reasons to change like API, filter, handling Details...
+
 import axios from "axios";
 import { useEffect, useMemo, useState } from "react";
 import { Rating } from "react-simple-star-rating";

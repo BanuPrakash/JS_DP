@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import type { IProduct } from "../IProduct";
 
+// HOOK. to fetch products form endpoint
 export const useProducts = () => {
   const [products, setProducts] = useState<IProduct[]>([]);
 

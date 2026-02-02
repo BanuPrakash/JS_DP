@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+// Changes only if filter concept changes
 export function useRateFilter() {
   const [filterRate, setFilterRate] = useState(1);
 
