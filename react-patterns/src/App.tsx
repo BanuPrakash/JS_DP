@@ -2,7 +2,29 @@ import Builder from "./builders/Builder";
 import "./App.css"
 import { DarkThemeFactory, LightThemeFactory } from "./factory/factories";
 import PostCard from "./compound/PostCard";
+import React from "react";
+import Counter from "./Counter";
+import Header from "./Header";
+const SpanWithText = ({text, ...props}) => {
+  return (
+    <span {...props}>
+      {text}
+    </span>
+  )
+}
 
+// @ts-ignore
+const ColorContainer = ({children}) => {
+  return React.cloneElement(children, {
+    style: {
+      backgroundColor: 'khaki',
+      padding: "10px",
+      color: 'brown'
+    }
+  })
+}
+
+// HOC: withColor(Component) => Component
 function App() {
     // const factory = new DarkThemeFactory();
     const factory = new LightThemeFactory();
@@ -15,8 +37,17 @@ function App() {
             .input({label:'Password'})
             .checkbox({label:'Subscribe to NewsLetter'})
             .build();
+  
+      function handleIncrement() {
+        Counter.increment()
+      }
   return (
     <div className="App">
+      <Header />
+      <button onClick={handleIncrement}>Increment!!!</button>
+      <ColorContainer>
+        <SpanWithText text="Adobe!!!" />
+      </ColorContainer>
       {/* <PostCard 
       showProfile
       post={

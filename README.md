@@ -351,5 +351,76 @@ PostCard.tsx before Compound Pattern:
 2) maybe not show Author
 3) maybe order can be changed
 
-Resume @11:30
+=========================
 
+Prototype Pattern: Clone
+
+Pattern is about sharing methods and properties between objects via a prototype, instead of copying them into each object.
+In JavaScript, it's built-in.
+
+Example 1:
+```
+    const userPrototype = {
+        login() {
+            console.log(`${this.name} logged in`);
+        }
+    }
+    // Object.create() is a static method in JavaScript that creates a new object, 
+    // using an existing object as the prototype of the newly created object
+    const user1 = Object.create(userPrototype);
+    user1.name = "Banu Prakash";
+    user1.login(); 
+
+    user1 doesn not have login()
+    JS looks up the prototype chain
+    finds login() in userPrototype
+    this === user1; // true
+```
+
+Object owned instance methods:
+```
+    function User(name, age) {
+        this.name = name
+        this.age = age;
+    }
+
+    User.prototype.getName = function () {
+            return this.name;
+        }
+    User.prototype.getAge = function() {
+            return this.age;
+        }
+    let u1 = new User("Roger", 32);
+    let u2 = new User("Rita", 24);
+
+```
+
+By default classes are based on prototype; all methods declared within a class will be added to class prototype
+
+React.cloneElement is a utility function in React that creates and returns a new React element using a provided element as a starting point, while also allowing you to add, override, or modify its props and children. 
+
+Singleton Pattern:
+The Singleton pattern is a creational design pattern that restricts a class to a single instance while providing global access to it. 
+
+It ensures that only one object of a specific type exists, which is initialized on demand and shared across an application. Key use cases include database connections, logging systems, and configuration managers. 
+
+Redux StateManagment: Redux Store is singleton
+
+====
+
+Note: ES Modules (ESM) in JavaScript treat modules as singletons by default. 
+When an ES module is imported multiple times across different files in an application, the code within that module is executed only once—the very first time it is imported. Subsequent imports return a cached, shared instance of the exported values. 
+
+```
+class ProductService {
+    
+}
+
+export default new ProductService();
+
+ComponentA;
+import ProductService from './ProductService'; // instance
+
+ComponentB;
+import ProductService from './ProductService'; // same instance, singlton
+```
