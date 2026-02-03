@@ -42,10 +42,9 @@ function App() {
           }
         }
       }>
+          <PostCard.Title />
           <PostCard.Buttons />
           <PostCard.User />
-        <PostCard.Title />
-      
       </PostCard>
      <Button onClick={() => alert("Hello")}>Click Me!!!</Button> <br />
      <Card>

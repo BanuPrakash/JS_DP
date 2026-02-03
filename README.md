@@ -351,3 +351,5 @@ PostCard.tsx before Compound Pattern:
 2) maybe not show Author
 3) maybe order can be changed
 
+Resume @11:30
+

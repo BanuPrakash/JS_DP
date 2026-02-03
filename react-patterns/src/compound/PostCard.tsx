@@ -33,7 +33,7 @@ export default function PostCard({ children, post}: PostCardProps) {
     return (    
         <PostCardContext.Provider value={{post}}>
              <div className='flex w-[300px] flex-row gap-2 rounded-md'>
-                {children}
+               {children}
              </div>
         </PostCardContext.Provider>
     )
@@ -50,10 +50,9 @@ PostCard.User = function PostCardProfile() {
      return <p className='text-sm text-neutral-400'>
                         {post.user.name}
      </p>
-
 }
 
-PostCard.Buttons = function PostCardProfile() {
+PostCard.Buttons = function () {
      return  <div className='flex flex-row gap-2'>
                 <button>Read more</button>
                 <button>Comments</button>
