@@ -424,3 +424,37 @@ import ProductService from './ProductService'; // instance
 ComponentB;
 import ProductService from './ProductService'; // same instance, singlton
 ```
+
+ Structural Pattern:
+
+ Composite Pattern:
+ Tree Structure, clients treat individual objects/components and composite uniformly
+
+React Perspective: Lead -- stateless simple component
+Composite --> has children
+
+```
+Leaf
+
+export function Button(...) {
+
+}
+
+export function Image(..) {
+
+}
+
+Composite:
+export function Form({children}: {children: React.ReactNode}) {
+    return <form>
+        <h1>Signup</h1>
+        {children}
+    </form>
+}
+
+Products and Boxes.
+A Box cantain several Products as well as smaller boxes,
+Little box can alos hold boxes or products.
+
+```
+
