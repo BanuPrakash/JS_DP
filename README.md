@@ -331,3 +331,23 @@ Abstract Factory pattern.
 Abstract Factory is a creational design pattern that lets you produce families of related objects without specifying their concrete classes.
 
 Theme: LightTheme and DarkTheme
+
+=====
+
+React Pattern: Compound Pattern
+
+```
+Think of compund pattern like <select> and <option> elements in HTML.
+Apart - don't do much, together complete expereince
+
+select an option share state and handle logic
+
+Compound Pattern are a pattern in which components are used together such that they share state and lets communicate with other
+``
+
+PostCard.tsx before Compound Pattern:
+* Sometimes we need to customize like:
+1) maybe not show. all buttons
+2) maybe not show Author
+3) maybe order can be changed
+

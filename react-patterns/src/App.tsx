@@ -1,6 +1,7 @@
 import Builder from "./builders/Builder";
 import "./App.css"
 import { DarkThemeFactory, LightThemeFactory } from "./factory/factories";
+import PostCard from "./compound/PostCard";
 
 function App() {
     // const factory = new DarkThemeFactory();
@@ -16,6 +17,36 @@ function App() {
             .build();
   return (
     <div className="App">
+      {/* <PostCard 
+      showProfile
+      post={
+        {
+          id: 1,
+          title: "Hello World!!!",
+          content: "This is my first Post",
+          user: {
+            id: 51,
+            name: 'Larry'
+          }
+        }
+      }/> */}
+      <PostCard 
+      post={
+        {
+          id: 1,
+          title: "Hello World!!!",
+          content: "This is my first Post",
+          user: {
+            id: 51,
+            name: 'Larry'
+          }
+        }
+      }>
+          <PostCard.Buttons />
+          <PostCard.User />
+        <PostCard.Title />
+      
+      </PostCard>
      <Button onClick={() => alert("Hello")}>Click Me!!!</Button> <br />
      <Card>
         <h2>iPhone 17</h2>
