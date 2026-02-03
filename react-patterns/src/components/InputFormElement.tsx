@@ -1,7 +1,8 @@
 import styles from './input.module.css'
 
 export interface InputFormElementProps {
-    label:string
+    label:string,
+    // onClick: Function
 }
 
 export default function InputFormElement({label}:InputFormElementProps) {

@@ -240,9 +240,94 @@ Pros:
         
         return (
             <div>
-                {elements}
+            {elements}
             </div>  
         )
     }
 
 ```
+
+Day 2:
+
+Recap: SOLID Design Principles 
+Design Patterns [GoF]
+Creational Pattern: Builder Pattern
+Structural Pattern
+Behavioural Pattern
+
+Factory Pattern:
+Intent: Create objects without exposing the creation logic, refer to them via a common interface
+
+```
+    instead of:
+    let repo = new SQLRepository(); // hard-coded
+    use:
+    let repo = RepositoryFactory.getRepository(); // factory method
+
+    getRepository();  can create a RDBMS repository , NoSQL repository, File Based repo,.. 
+```
+* you ask for something
+* factory decides what to create
+* You don't care how it's created
+
+Example:
+```
+    // Not OCP
+    function apiClientFactory(env) {
+        if( env === "dev") {
+            return {
+                baseUrl: "http://localhost:3000",
+                log: true
+            }
+        }
+
+        if( env === "prod") {
+              return {
+                baseUrl: "https://api.example.com",
+                log: false
+            }
+        }
+    }
+
+    const api = apiClientFactory(process.env.NODE_ENV);
+```
+
+.env
+API_ENDPOINT = http://localhost:3000
+LOG: true
+
+```
+    function getPlants(season) {
+        if(season === 'SUMMER') {
+            ...
+        } else if (season === 'WINTER') {
+
+        }
+    }
+
+Factory                             Builder
+Create in one step                  step-by-step
+chooses which object                configures how
+good for variants                   good for complex configs like .setX(5).setY(89).build()
+
+React.createElement()
+document.createElement() ---> Factory method
+
+
+const ButtonFactory = {
+    primary: props => <PrimaryButton {...props} />,
+    danger: props => <DangerButton {...props} />
+}
+
+const Button = ({type, ..props}) => {
+    const Component = ButtonFactory[type];
+    return Component ? component(props): null
+}
+
+<Button type="primary" />
+```
+
+Abstract Factory pattern.
+Abstract Factory is a creational design pattern that lets you produce families of related objects without specifying their concrete classes.
+
+Theme: LightTheme and DarkTheme
