@@ -436,6 +436,7 @@ Composite --> has children
 ```
 Leaf
 
+```
 export function Button(...) {
 
 }
@@ -443,20 +444,23 @@ export function Button(...) {
 export function Image(..) {
 
 }
+```
 
 Composite:
+```
 export function Form({children}: {children: React.ReactNode}) {
     return <form>
         <h1>Signup</h1>
         {children}
     </form>
 }
+```
 
 Products and Boxes.
 A Box cantain several Products as well as smaller boxes,
 Little box can alos hold boxes or products.
 
-```
+ 
 
 Day 3:
 Simple creation?        → Factory
@@ -595,6 +599,7 @@ Proxy controls access to orignail object, perform operations before or after req
 Client --> request() --> Proxy --> request() --> realObject
 
 Value Proxy : valueOf() method converts an object to a primative type
+
 ```
     class Percentage {
         constructor(percent) {
@@ -634,4 +639,5 @@ Proxy Traps:
 UI Proxy: 
 Show a lightweight placeholder (proxy) until the real component is ready - exactly how YouTube does it.
 
+=============
 
