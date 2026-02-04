@@ -540,9 +540,12 @@ Growth Problem:
     // Abstraction
     export abstract class Payment {
         protected gateway: PaymentGateway; // Implementor
+        protected logging: Logging;
         constructor(...)
 
         abstract pay(amount: number);
+
+        abstract log(msg:string);
     }
     Delegate work to implementor
 
@@ -551,6 +554,7 @@ Growth Problem:
         pay(amount: number) {
             this.gateway.pay(amount);
         }
+
     }
 
     // implementor
@@ -582,3 +586,43 @@ LongViewAlbum
 LongViewArtist
 
 
+===========
+
+Structural Pattern : Proxy Pattern
+Provide a substitute or placeholder for another object.
+Proxy controls access to orignail object, perform operations before or after request
+
+Client --> request() --> Proxy --> request() --> realObject
+
+Value Proxy : valueOf() method converts an object to a primative type
+```
+    class Percentage {
+        constructor(percent) {
+            this.percent = percent;
+        }
+
+        toString() {
+            return `${this.percent} % `;
+        }
+
+        valueOf() {
+            return this.percent / 100;
+        }
+    }
+
+    let fivePercent = new Percentage(5); // object
+    let value = 100 * fivePercent; // treat object as primitive
+
+```
+
+ES 6 / ECMAScript 2015 introduced Proxy Object
+allows operations lie get, setm apply to redefine properties.
+Commonly used : log, validation, format, sanitize, ...
+
+Syntax:
+let proxy = new Proxy(target, handler);
+target -- is an object to wrap
+handler - control the behaviours on target
+
+Proxy Traps:
+1) The get() trap
