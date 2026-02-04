@@ -719,3 +719,30 @@ Each Render:
 
 FlyWeight : Share Structure
 React.memo() : Skip re-render
+
+===>
+React.createElement() ==> JSX and gets JS Object [VDOM tree]
+render() => JS Object [VDOM tree] ==> DOM 
+
+Without Flyweight:
+JSX -> Card
+JSX -> Card
+JSX --> Card
+
+With Flyweight:
+JSX -> JS one place and Shared for every DOM creation for Product
+
+===========
+
+A -> B
+Should i memoize B?
+Isn't re-rendering B better if its a simple Atom
+
+A -> B -> C -> D - > E
+memoize B: it can prevent B -> C -> D - > E re-render
+
+Adapter structural pattern:
+Allows Object with incompatible interfaces to collabrate.
+
+Stock Data Provider --> XML -> Adapter(XML-JSON) -->  React Component (needs JSON)
+
