@@ -641,3 +641,81 @@ Show a lightweight placeholder (proxy) until the real component is ready - exact
 
 =============
 
+Flyweight Pattern:
+ Conserves memory by sharing expensive objects, objects which require more space
+ Flyweight objects are immutable
+ Benefits: reduce memory consumption, increase performance
+
+    ```
+        function Flyweight(make, model, processor) {
+            this.make = make;
+            this.model = model;
+            this.processor = processor;
+        }
+
+        let FlyWeightFactory = ( function[] {
+            var flyweights = [];
+            return {
+                get: function (make, model, processor) {
+                    if(!flyweights[make + model]) {
+                        flyweights[make + model] = new Flyweight(make, model, processor);
+                    }
+
+                    return flyweights[make + model] ;
+                }
+            }
+        })
+
+        function ComputerCollection() {
+            var computers = [];
+
+            return {
+                add: function ( make, model, processor, memory, tag) {
+                    computers[tag] = new Computer(...)
+                }
+            }
+        }
+
+        let Computer = function(make, model, processor, memory, tag) {
+            this.flyweight = FlyWeightFactory.get(make, model, processor);
+            this.memory = memory;
+            this.tag = tag;
+            ...
+        }
+        let computers = new ComputerCollection();
+        computers.add("Dell", "Studio XPS", "Intel", "5G", "YLPT");
+        computers.add("Dell", "Studio XPS", "Intel", "6G", "FGTR");
+        computers.add("Dell", "Studio XPS", "Intel", "2G", "LOFS");
+        // 40 + models
+
+```
+Share inrinsic state between many objects 
+FlyWeight - React 
+* Shared UI Structure + styles
+
+When it makes sense in React:
+* Large Lists like Youtube, Amazon having same layout, different data
+* Expensive Components (icons, charts, media cards)
+* Avoid recreating havy JSX
+
+not useful for small lists and different structure
+
+Without Flyweight:
+```
+Each Render:
+* New JSX tree
+* New Style Objects
+* Repeated Structures
+
+ {products.map(p => (
+                    <div key ={p.id} className="card">
+                        <div className="thumb" />
+                        <h4>{p.title}</h4>
+                        <p>{p.price}</p>
+                    </div>
+                ))}
+
+```
+
+FlyWeight : Share Structure
+React.memo() : Skip re-render
