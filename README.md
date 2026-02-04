@@ -626,3 +626,7 @@ handler - control the behaviours on target
 
 Proxy Traps:
 1) The get() trap
+2) The set() trap
+3) The apply() trap
+
+Resume @ 11:20
