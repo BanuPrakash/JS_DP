@@ -7,6 +7,7 @@ import Counter from "./Counter";
 import Header from "./Header";
 import React from "react";
 import Bridge from "./bridge/Bridge";
+import ProxyComp from "./proxy/ProxyComp";
  
 
 // @ts-ignore
@@ -50,6 +51,7 @@ function App() {
    
 
     return <div className="App">
+      <ProxyComp />
       <Bridge />
       <Header />
       <button onClick={handleIncrement}>Increment!!!</button>

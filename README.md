@@ -629,4 +629,9 @@ Proxy Traps:
 2) The set() trap
 3) The apply() trap
 
-Resume @ 11:20
+=================
+
+UI Proxy: 
+Show a lightweight placeholder (proxy) until the real component is ready - exactly how YouTube does it.
+
+
