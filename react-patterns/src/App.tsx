@@ -1,10 +1,15 @@
 import Builder from "./builders/Builder";
 import "./App.css"
-import { DarkThemeFactory, LightThemeFactory } from "./factory/factories";
+import { LightThemeFactory } from "./factory/factories";
 import PostCard from "./compound/PostCard";
-import React from "react";
+ 
 import Counter from "./Counter";
 import Header from "./Header";
+import React from "react";
+import Bridge from "./bridge/Bridge";
+ 
+
+// @ts-ignore
 const SpanWithText = ({text, ...props}) => {
   return (
     <span {...props}>
@@ -41,8 +46,11 @@ function App() {
       function handleIncrement() {
         Counter.increment()
       }
-  return (
-    <div className="App">
+
+   
+
+    return <div className="App">
+      <Bridge />
       <Header />
       <button onClick={handleIncrement}>Increment!!!</button>
       <ColorContainer>
@@ -84,7 +92,7 @@ function App() {
      </Card>
      {elements}
     </div>
-  )
+  
 }
 
 export default App

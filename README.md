@@ -458,3 +458,127 @@ Little box can alos hold boxes or products.
 
 ```
 
+Day 3:
+Simple creation?        → Factory
+Families of objects?    → Abstract Factory
+Complex construction?   → Builder
+Clone existing object?  → Prototype
+* Chess Pawns
+* Word Template [Resume , Invoice]
+One global instance?    → Singleton
+* Shared storage
+
+1. Factory Method
+Use when:
+You want to delegate object creation to subclasses
+The exact type isn’t known at compile time
+You want to follow Open/Closed Principle
+
+2. Abstract Factory
+Use when:
+You need to create families of related objects
+Objects must be compatible with each other
+You want to swap entire families at once
+
+3. Builder
+Use when:
+Object construction is complex
+Many optional fields
+You want step-by-step creation
+
+4. Prototype
+Use when:
+Object creation is expensive
+You need many similar objects
+You want to clone instead of recreate
+
+5. Singleton
+Use when:
+Exactly one instance must exist
+Global access is required
+
+6. React Specific Patterns: 
+======
+
+Structural Pattern:
+Bridge Pattern: Split a large class of set of closely related classes into a seperate hierarchies
+
+Abstraction (Payment type)
+    * OneTimePayment
+    * SubscriptionPayment
+    * RefundPayment
+   
+Implementation (Gateway)
+    * Stripe
+    * RazorPay
+    * PayPal
+
+Implementation (Logging)
+    * Console
+    * File
+
+Total number of classes without Bridge Pattern:
+3 Payment types * 3 Gateways
+* OneTimeStripePayment
+* OneTimeRazorPayPayment
+* OneTimeRazorPayPalPayment
+* SubscriptionPaymentStripePayment
+* SubscriptionPaymentRazorPayPayment
+* SubscriptionPaymentPayPalPayment
+* RefundPaymentStripePayment
+* RefundPaymentRazorPayPayment
+* RefundPaymentRazorPayPalPayment
+
+Growth Problem:
+ * Add InstallmentPayment
+ * New Gateway -> Square
+
+ Without Bridge: 4 x 4 = 16 classes
+
+ Example:
+ ```
+    // Abstraction
+    export abstract class Payment {
+        protected gateway: PaymentGateway; // Implementor
+        constructor(...)
+
+        abstract pay(amount: number);
+    }
+    Delegate work to implementor
+
+    // Refined Abstraction
+    export class SubscriptionPayment extends Payment {
+        pay(amount: number) {
+            this.gateway.pay(amount);
+        }
+    }
+
+    // implementor
+     export abstract class PaymentGateway {
+        pay(amount:number);
+     }
+
+     export class StripeImpl extends PaymentGateway {
+        pay(amount: number) {
+            // concreate implementation
+            stripe.confirmPayment(amount);
+        }
+     }
+
+     // StripeImpl knows everything about Stripe, can change independently
+     // Any changes will not effect payment
+
+    If I Need a new Gateway, only one class SquareImpl is added
+    If I need a new InstallmentPayment, only one class InstallmentPayment is added
+ ```
+
+ React Specific Bridge Pattern Example:
+ * View Types -> ShortView, LongView, GridView
+ * Media Types -> Artist, Album, PlayList
+
+ShortViewArtist
+ShortViewAlbum
+LongViewAlbum
+LongViewArtist
+
+
