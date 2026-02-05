@@ -746,3 +746,31 @@ Allows Object with incompatible interfaces to collabrate.
 
 Stock Data Provider --> XML -> Adapter(XML-JSON) -->  React Component (needs JSON)
 
+======
+
+Day 4:
+Structural design patterns explain how to assemble objects and classes into larger structures, while keeping these structures flexible and efficient
+-Adapter, Bridge, composite, proxy, flyweight
+
+Behavioural design patterns:
+Assignment of resposibilities between objects.
+
+Visitor Pattern:
+A visitor pattern is a software design pattern that separates the algorithm from the object structure. 
+Because of this separation, new operations can be added to existing object structures without modifying the structures.
+Visitor: new logic, seperate from the entity
+
+How it works?
+* Dynamic Dispatch: method is determined dynamically at runtime based on the actual instance type of object
+shape.render(); // renders Circle or Recatangle based on what shape is pointing to.. 
+
+* Single Dispatch: based on the actual instance type of object
+* Double Dispatch: decides the method to call based on both the object type and argument type.
+    vistor.visit(elem);
+
+Example: Document: Paragraph, Heading, Link
+
+HTMLVisitor, PlainText Visitor
+
+
+
