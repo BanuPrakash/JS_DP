@@ -780,3 +780,78 @@ Plugins
 https://astexplorer.net/
 
 npm i babel-cli babel-loader
+
+====
+```
+Problem                                     Pattern
+1) Avoid new everywhere                     Factory
+2) Theme / family objects                   Abstract Factory
+3) Too many args to constructor             Builder
+step-by-step
+4) Wrap 3rd party API                       Adapter
+5) UI X class explosion                     Bridge
+6) Large lists / performance                Flyweight
+7) LAzy loading / access control            Proxy
+8) Traversal like Analytics [GTAG, MIXPANEL] Visitor                
+
+```
+
+Iterator Pattern:
+Traverse elements in a collection without exposing its underlying representation [stack, tree, ...]
+
+```
+    let values = [100, 200, 300];
+    for(let v of values) {
+        console.log(v);
+    }
+``
+The Symbol.iterator static data property represents the well-known symbol Symbol.iterator. The iterable protocol looks up this symbol for the method that returns the iterator for an object. 
+
+```
+class UICollection {
+    private items = [ new Button(), new Card(), new Dialog()];
+    
+    [Symbol.iterator]() {
+        let index = 0; // closure
+        const items = this.items; // closure
+        return {
+            next() {
+                if(index < items.length) {
+                    return {value: items[index++], done: false}
+                }
+                return {done: true}
+            }
+        }
+    }
+}
+
+for( const elem of new UICollection()) {
+    console.log(elem);
+}
+```
+
+Iterator: Walk thro the collection
+Visitor: What do i do to each item in collection
+
+======================================
+
+Chain of Responsibility:
+pass request along the chain of handlers.
+Request -> Handler -> Handler -> Handler -> Actual Object
+
+ATM Dispense machine
+5450 rupees
+500Handler -> 10 notes
+200Handler-> 2 notes
+50Handler -> 1 note
+
+Request -> Validation -> Authentication -> Authorization -> Caching -> Resource
+
+Note: Multiple handlers, order matters
+Middleware: Redux, ExpressJS, NextJS
+
+submit-> required->email->password->success
+
+=================
+The Command pattern is a behavioral design pattern that encapsulates a request as an object, thereby decoupling the sender of the request from the object that performs the action. 
+This allows requests to be queued, logged, and operations to be undoable. 

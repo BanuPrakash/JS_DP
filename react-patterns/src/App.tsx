@@ -9,6 +9,7 @@ import React, { useState } from "react";
 // import Bridge from "./bridge/Bridge";
 // import ProxyComp from "./proxy/ProxyComp";
 import ProductList from "./flyweight/ProductList";
+import CommandComponent from "./command/Command";
  
 
 // @ts-ignore
@@ -33,6 +34,7 @@ const ColorContainer = ({children}) => {
 
 // HOC: withColor(Component) => Component
 function App() {
+  
     // const factory = new DarkThemeFactory();
   //   const factory = new LightThemeFactory();
   //   const Button = factory.createButton();
@@ -94,7 +96,7 @@ function App() {
     // let [show, setShow] = useState<boolean>(false);
 
     return <div className="App">
-      
+        <CommandComponent />
       {/* <button onClick={() => setShow(true)}>Show</button>
       {
         show && <ProductList products={products}/>
