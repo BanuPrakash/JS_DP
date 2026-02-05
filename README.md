@@ -855,3 +855,31 @@ submit-> required->email->password->success
 =================
 The Command pattern is a behavioral design pattern that encapsulates a request as an object, thereby decoupling the sender of the request from the object that performs the action. 
 This allows requests to be queued, logged, and operations to be undoable. 
+
+===
+
+Decorator Pattern:
+React HOC are used for Decorator pattern
+
+const withLogger = (WrappedComponent) => {
+  return (props) => {
+    useEffect(() => {
+      console.log(`${WrappedComponent.name} rendered`);
+    });
+    return <WrappedComponent {...props} />;
+  };
+};
+
+export function MyComponent {
+
+}
+
+export default withLogger(MyComponent)
+// 
+
+let comp = withClick(withLogger(MyComponent));
+
+============
+
+
+
