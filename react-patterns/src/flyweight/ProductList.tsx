@@ -9,7 +9,7 @@ type Props = {
 
 const ProductCardFlyWeight  = React.memo(
     function ProductCard({title, price}: Props) {
-        return <div  className="card">
+        return <div className="card">
                         <div className="thumb" />
                         <h4>{title}</h4>
                         <p>{price}</p>
@@ -32,7 +32,7 @@ export default function ProductList({products}: any) {
     return (
         <div className="grid">
             {products.map((p:any) => (
-                    <Card key={p.id}
+                    <Card key={p.title}
                     title={p.title}
                     price={p.price} />
                 ))}
