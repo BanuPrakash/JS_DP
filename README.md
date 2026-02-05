@@ -773,4 +773,10 @@ Example: Document: Paragraph, Heading, Link
 HTMLVisitor, PlainText Visitor
 
 
+Plugins
+@babel/preset-env: Visitor --> Syntax transform, polyfill
+@babel/preset-react: Visitor-> JSX -> JS object
 
+https://astexplorer.net/
+
+npm i babel-cli babel-loader
